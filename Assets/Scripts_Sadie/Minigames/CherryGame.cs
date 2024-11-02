@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class CherryGame : MiniGameBase
 {
-    public override void Interaction()
+    public override void Interaction() 
     {
-        orderManager.playerAccIng.Add(DrinkBase.Accesories.CHERRY);
+         base.Interaction();
     }
+    public override void ConfirmCheck() 
+    { 
+         base.ConfirmCheck();
+    }
+
+
 }
