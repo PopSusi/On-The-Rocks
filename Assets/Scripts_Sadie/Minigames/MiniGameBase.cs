@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu]
-public class MiniGameBase : ScriptableObject
+public abstract class MiniGameBase : MonoBehaviour
 {
     public enum Type
     {
-        TYPE1,
-        TYPE2,
-        TYPE3
+        ICE,
+        CHERRIES,
+        COLA,
+        LEMON,
+        OLIVES,
+        PIKMIN
+
     }
 
     public Type gameType;
@@ -21,4 +23,5 @@ public class MiniGameBase : ScriptableObject
 
     public virtual void Interaction() { }
     public virtual void ConfirmCheck() { }
+
 }
