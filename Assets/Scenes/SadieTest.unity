@@ -156,6 +156,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0fd6b6bfe6cda1e44932b405698197ba, type: 2}
   customerBase: {fileID: 0}
   customerPrefab: {fileID: 4882824923810906498, guid: 938acf8274305c64e837a70c6fb9c106, type: 3}
+  drinkBase: {fileID: 0}
+  drinkBases:
+  - {fileID: 11400000, guid: 73d6318a09ee1af42a95c5df9f4f2432, type: 2}
+  currentCustomer: {fileID: 0}
 --- !u!4 &115829697
 Transform:
   m_ObjectHideFlags: 0
