@@ -15,4 +15,4 @@ MonoBehaviour:
   orderSFX: {fileID: 0}
   bookText: 
   bookSprite: {fileID: 0}
-  type: 0
+  type: 5
