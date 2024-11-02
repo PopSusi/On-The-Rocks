@@ -254,7 +254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8736292699971626029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2379325301898949534}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: SendEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2430245415664801817
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +326,7 @@ MonoBehaviour:
   icon:
   - {fileID: 0}
   - {fileID: 0}
-  ingredient: []
+  ingredients: []
 --- !u!1 &2929626235706412826
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +447,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 172638486442792734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2379325301898949534}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: SendEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3175106738950750944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1178,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7289876298319705345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 507696522493217700}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: SendEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6312397172414619279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,7 +1520,7 @@ MonoBehaviour:
   icon:
   - {fileID: 0}
   - {fileID: 0}
-  ingredient: []
+  ingredients: []
 --- !u!1 &7240848328079189643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,4 +2366,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9213380052661466501}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 507696522493217700}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: SendEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
