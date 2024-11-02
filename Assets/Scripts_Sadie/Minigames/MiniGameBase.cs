@@ -21,6 +21,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public GameObject baseObj;
     public int interactionCount;
     [SerializeField] protected OrderManager orderManager;
+    [SerializeField] protected Canvas gameCanvas; //game's UI
 
     public virtual void Interaction() { } //When player loads minigame
     public virtual void ConfirmCheck() { } //Check at end of game

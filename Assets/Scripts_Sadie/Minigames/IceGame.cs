@@ -13,7 +13,7 @@ public class IceGame : MiniGameBase
 
     public void Start()
     {
-        Interaction();
+       // Interaction();
     }
 
     public override void Interaction()
@@ -27,11 +27,16 @@ public class IceGame : MiniGameBase
         if (perfectIce)
         {
             Debug.Log("Success!");
+            orderManager.playerAccIng.Add(DrinkBase.Accesories.ICE);
+
         }
         else
         {
             Debug.Log("Fail");
+            orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
         }
+
+        gameCanvas.gameObject.SetActive(false);
         activeIce = false;
     }
 
@@ -39,17 +44,20 @@ public class IceGame : MiniGameBase
     {
         activeIce = true;
         iceTarget = Random.Range(10, 31);
-        Debug.Log(iceTarget);
+        Debug.Log("ice target = " + iceTarget);
         iceCount = 0;
+        interactionCount = 0;
+
+        gameCanvas.gameObject.SetActive(true);
     }
 
     public void OnMouseDown()
     {
-        Debug.Log("RAH");
+        
         if (activeIce)
         {
-            iceCount++;
-            Debug.Log(iceCount);
+            interactionCount++;
+            Debug.Log(interactionCount);
             checkIce();
         }
         
@@ -57,7 +65,7 @@ public class IceGame : MiniGameBase
 
     public void checkIce()
     {
-        if (iceCount == iceTarget)
+        if (interactionCount == iceTarget)
         {
             perfectIce = true;
             StartCoroutine(waiter());
@@ -68,7 +76,7 @@ public class IceGame : MiniGameBase
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(3);
-        if (iceCount != iceTarget)
+        if (interactionCount != iceTarget)
         {
             perfectIce = false;
         }
