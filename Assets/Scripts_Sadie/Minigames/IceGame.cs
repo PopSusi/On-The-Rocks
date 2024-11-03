@@ -13,7 +13,7 @@ public class IceGame : MiniGameBase
 
     public void Start()
     {
-       // Interaction();
+        //Interaction();
     }
 
     public override void Interaction()
