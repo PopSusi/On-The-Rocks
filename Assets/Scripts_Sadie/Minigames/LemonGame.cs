@@ -19,11 +19,7 @@ public class LemonGame : MiniGameBase
     // Update is called once per frame
     void Update()
     {
-        if(count == 3)
-        {
-            ConfirmCheck();
-            return;
-        }
+       
     }
 
     public override void Interaction() 
@@ -33,6 +29,7 @@ public class LemonGame : MiniGameBase
     public override void ConfirmCheck() 
     {
 
+        activeLemon = false;
         if (perfectLemon)
         {
             Debug.Log("Success!");
@@ -41,7 +38,6 @@ public class LemonGame : MiniGameBase
         {
             Debug.Log("Fail");
         }
-        activeLemon = false;
     }
 
     public void OnMouseDown()
