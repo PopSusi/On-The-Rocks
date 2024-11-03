@@ -172,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &137590980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +190,8 @@ MonoBehaviour:
   interactionSprites: []
   baseObj: {fileID: 137590979}
   interactionCount: 0
+  orderManager: {fileID: 0}
+  gameCanvas: {fileID: 0}
 --- !u!50 &137590981
 Rigidbody2D:
   serializedVersion: 4
@@ -519,6 +521,7 @@ MonoBehaviour:
   drinkBase: {fileID: 0}
   drinkBases:
   - {fileID: 11400000, guid: 73d6318a09ee1af42a95c5df9f4f2432, type: 2}
+  orderManager: {fileID: 0}
   currentCustomer: {fileID: 0}
 --- !u!4 &625608624
 Transform:
@@ -701,6 +704,8 @@ MonoBehaviour:
   interactionSprites: []
   baseObj: {fileID: 1170904410}
   interactionCount: 0
+  orderManager: {fileID: 0}
+  gameCanvas: {fileID: 0}
   perfectIce: 0
   iceTarget: 0
   iceCount: 0
@@ -902,7 +907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1861948077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,11 +920,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c855a39154f1ff1448834fcebf334311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 0
+  gameType: 2
   baseSprite: {fileID: 0}
   interactionSprites: []
   baseObj: {fileID: 1861948076}
   interactionCount: 0
+  orderManager: {fileID: 0}
+  gameCanvas: {fileID: 0}
   activelyJerking: 0
   mousePosition: {x: 0, y: 0}
   mouseTemp: {x: 0, y: 0}
