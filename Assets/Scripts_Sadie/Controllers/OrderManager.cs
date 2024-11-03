@@ -15,6 +15,7 @@ public class OrderManager : MonoBehaviour
     public bool accesoriesCorrect = false;
 
     private AudioSource audioSource;
+    public GameObject drink;
 
     public delegate void OrderAlerts();
     public static event OrderAlerts OrderDone;
@@ -87,7 +88,17 @@ public class OrderManager : MonoBehaviour
             Debug.Log("Meh");
         }
             ResetMetrics();
+        drink.SetActive(true);
+        drink.GetComponent<SpriteRenderer>().sprite = characterDrinkManager.drinkBase.finalImage;
+        StartCoroutine("RemoveDrink");
     } //END Compare Drinks()
+
+
+    private IEnumerator RemoveDrink()
+    {
+        yield return new WaitForSeconds(2f);
+        drink.SetActive(false);
+    }
 
     private void ResetMetrics()
     {
