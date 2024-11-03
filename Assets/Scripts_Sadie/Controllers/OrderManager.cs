@@ -65,6 +65,7 @@ public class OrderManager : MonoBehaviour
             if (booleanCheck)
             {
                 checkCount++;
+                Debug.Log(checkCount);
             }
         }
         if (checkCount < 2)

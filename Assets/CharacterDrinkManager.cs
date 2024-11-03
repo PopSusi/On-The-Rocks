@@ -17,7 +17,7 @@ public class CharacterDrinkManager : MonoBehaviour
     {
         //Test on start
         CustomerInitialize();
-        CustomerController.LeftScreen += CustomerInitialize;
+        CustomerController.LeftScreen += RespawnCustomer;
     }
 
 
@@ -28,11 +28,11 @@ public class CharacterDrinkManager : MonoBehaviour
     {
         customerBases = Resources.LoadAll<CustomerBase>("Customers");
         customerBase = customerBases[UnityEngine.Random.Range(0, customerBases.Length)];
-        Debug.Log(customerBase);
+        Debug.Log(" new customer");
 
         currentCustomer = Instantiate(customerPrefab, new Vector3(-15, 0, 0), quaternion.identity).GetComponent<CustomerController>();
         customerPrefab.GetComponent<CustomerController>().customerData = customerBase;
-
+        OrderManager.OrderDone += currentCustomer.DriftOut;
         DrinkInitialize();
     }
 
@@ -52,6 +52,7 @@ public class CharacterDrinkManager : MonoBehaviour
     //Once round is over, delete current customer and spawn in new one
     public void RespawnCustomer()
     {
+        OrderManager.OrderDone -= currentCustomer.DriftOut;
         Destroy(currentCustomer.gameObject);
         CustomerInitialize();
     }
