@@ -26,7 +26,9 @@ public class Page : MonoBehaviour
     public void SendEvent(int index)
     {
         Debug.Log(ingredients.Length + " is length. " + index + " is the accessor.");
+        ;
         string gameToSend = ingredients[index].type.ToString();
+        Debug.Log(gameToSend);
         Send(gameToSend);
         Closed();
     }

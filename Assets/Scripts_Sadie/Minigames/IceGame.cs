@@ -11,11 +11,6 @@ public class IceGame : MiniGameBase
     public float iceCount;
     public bool activeIce;
 
-    public void Start()
-    {
-        //Interaction();
-    }
-
     public override void Interaction()
     {
         StartIce();

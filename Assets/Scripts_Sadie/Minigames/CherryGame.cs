@@ -19,18 +19,22 @@ public class CherryGame : MiniGameBase
 
     public override void ConfirmCheck()
     {
+        
         //Runs on spacebar
         if(cherryGuy.secondsHeld == interactionCount)
         {
             Debug.Log("Success!");
             //orderManager.playerAccIng.Add(DrinkBase.Accesories.CHERRY);
             orderManager.Success();
+            StartCoroutine(FadeOut());
         }
         else
         {
             Debug.Log("Fail");
             //orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
             orderManager.Fail();
+            StartCoroutine(FadeOut());
+
         }
 
         
@@ -38,6 +42,7 @@ public class CherryGame : MiniGameBase
 
    private IEnumerator FadeOut()
     {
+        Debug.Log("Fade out start");
         yield return new WaitForSeconds(1);
         gameCanvas.gameObject.SetActive(false);
         cherryGuy.gameObject.SetActive(false);

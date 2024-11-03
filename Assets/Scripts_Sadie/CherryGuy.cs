@@ -13,12 +13,14 @@ public class CherryGuy : MonoBehaviour
 
     private void OnMouseDown()
     {
+        secondsHeld = 0;
         StartCoroutine(RunTimer());
         GetComponent<SpriteRenderer>().sprite = cherryGame.interactionSprites;
     }
 
     private void OnMouseUp()
     {
+        
         StopAllCoroutines();
         //Temp
         cherryGame.ConfirmCheck();
