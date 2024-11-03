@@ -2,25 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//Holds ingredients and names for each drink
 [CreateAssetMenu]
 public class DrinkBase : ScriptableObject
 {
-    public enum Liquids
+    //Liquid ingredients
+    public enum Liquids 
     {
-        LIQUID1,
-        LIQUID2,
-        LIQUID3
+        COLA,
+        LEMONJUICE,
+        FAIL
+        
     }
 
+    //Non-Liquid ingredients
     public enum Accesories
     {
-        ACC1,
-        ACC2,
-        ACC3
+        CHERRY,
+        ICE,
+        OLIVE,
+        PIKMIN,
+        FAIL
+    }
+
+    public enum DrinkName
+    {
+        DRINK1,
+        DRINK2,
+        DRINK3
     }
 
     public Liquids[] liquidIngredients;
     public Accesories[] accIngredients;
+    public DrinkName drinkName;
 
 }

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84fdb30c01c17344baa2f610fae7d708, type: 3}
-  m_Name: Drink1
+  m_Script: {fileID: 11500000, guid: c3481c0644fea2240a44e888692fe3ac, type: 3}
+  m_Name: Page1
   m_EditorClassIdentifier: 
-  liquidIngredients: 00000000000000000000000000000000
-  accIngredients: 0000000000000000
-  drinkName: 0
+  page: {fileID: 0}
+  pagetext: 
+  drink: 0

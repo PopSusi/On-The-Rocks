@@ -9,6 +9,7 @@ public class CharacterDrinkManager : MonoBehaviour
     [SerializeField] private GameObject customerPrefab;
     public DrinkBase drinkBase;
     public DrinkBase[] drinkBases;
+    [SerializeField] private OrderManager orderManager;
 
     public CustomerController currentCustomer;
     void Start()
@@ -18,7 +19,9 @@ public class CharacterDrinkManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Spawns in a customer
+    /// </summary>
    public void CustomerInitialize()
     {
         customerBase = customerBases[Random.Range(0, customerBases.Length)];
@@ -30,9 +33,22 @@ public class CharacterDrinkManager : MonoBehaviour
         DrinkInitialize();
     }
 
+    /// <summary>
+    /// Assigns a drink to the customer
+    /// </summary>
     public void DrinkInitialize()
     {
         drinkBase = drinkBases[Random.Range(0, drinkBases.Length)];
+        
         currentCustomer.customerData.drinkBase = drinkBase;
+        orderManager.drinkBase = drinkBase;
+        Debug.Log(currentCustomer.customerData.drinkBase);
+    }
+
+    //Once round is over, delete current customer and spawn in new one
+    public void RespawnCustomer()
+    {
+        Destroy(currentCustomer.gameObject);
+        CustomerInitialize();
     }
 }

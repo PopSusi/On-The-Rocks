@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cherries
   m_EditorClassIdentifier: 
   orderSFX: {fileID: 0}
-  bookText: {fileID: 0}
+  bookText: 
   bookSprite: {fileID: 0}
-  type: 0
+  type: 1

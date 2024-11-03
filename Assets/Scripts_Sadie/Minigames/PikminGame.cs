@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class PikminGame : MiniGameBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Interaction()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        orderManager.playerAccIng.Add(DrinkBase.Accesories.PIKMIN);
     }
 }

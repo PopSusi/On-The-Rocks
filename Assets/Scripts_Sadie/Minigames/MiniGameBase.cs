@@ -11,7 +11,7 @@ public abstract class MiniGameBase : MonoBehaviour
         COLA,
         LEMON,
         OLIVES,
-        PIKMIN
+        PIKMIN,
 
     }
 
@@ -20,8 +20,10 @@ public abstract class MiniGameBase : MonoBehaviour
     public Sprite[] interactionSprites;
     public GameObject baseObj;
     public int interactionCount;
+    [SerializeField] protected OrderManager orderManager;
+    [SerializeField] protected Canvas gameCanvas; //game's UI
 
-    public virtual void Interaction() { }
-    public virtual void ConfirmCheck() { }
+    public virtual void Interaction() { } //When player loads minigame
+    public virtual void ConfirmCheck() { } //Check at end of game
 
 }

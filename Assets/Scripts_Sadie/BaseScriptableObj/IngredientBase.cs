@@ -8,7 +8,7 @@ using TMPro;
 public class IngredientBase : ScriptableObject
 {
     public AudioClip orderSFX;
-    public TextMeshProUGUI bookText;
+    public string bookText;
     public Sprite bookSprite;
     public MiniGameBase.Type type;
 }
