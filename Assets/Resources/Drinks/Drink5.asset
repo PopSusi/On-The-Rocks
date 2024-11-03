@@ -18,3 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 079045eb4ff6e7045a32e5e59602acda, type: 2}
   - {fileID: 11400000, guid: 460b14455da527548a5f4e94dea51419, type: 2}
   drinkName: 1
+  finalImage: {fileID: 21300000, guid: 7e43b2e871754a842818a29ce0af3792, type: 3}
