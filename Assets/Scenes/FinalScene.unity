@@ -4368,6 +4368,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 31.600002
       objectReference: {fileID: 0}
+    - target: {fileID: 2534909379951662456, guid: 562df52fcb1644c44b8000f1a95607ec, type: 3}
+      propertyPath: finalMenu
+      value: 
+      objectReference: {fileID: 1877354584}
     - target: {fileID: 2947828561268502119, guid: 562df52fcb1644c44b8000f1a95607ec, type: 3}
       propertyPath: m_SizeDelta.x
       value: 463.9
@@ -5186,7 +5190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1877354585
 RectTransform:
   m_ObjectHideFlags: 0
