@@ -58,7 +58,7 @@ public class OrderManager : MonoBehaviour
             playerAccIng.Clear();
             characterDrinkManager.RespawnCustomer();
         }*/
-
+        characterDrinkManager.currentCustomer.AttemptCancelSpeech();
         int checkCount = 0;
         foreach (bool booleanCheck in checks)
         {

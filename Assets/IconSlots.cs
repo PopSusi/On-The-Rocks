@@ -22,12 +22,19 @@ public class IconSlots : MonoBehaviour
     }
     public void ResetIterator()
     {
+        StartCoroutine("Reset");
+    }
+
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(.33f);
         iterator = 0;
-        foreach(var slots in icons)
+        foreach (var slots in icons)
         {
             slots.gameObject.SetActive(false);
         }
     }
+
     ~IconSlots()
     {
         CustomerController.Icon -= NewSlot;

@@ -66,7 +66,7 @@ public class CustomerController : MonoBehaviour
         while (t <= 1.0)
         {
             t += Time.deltaTime / 2; // length of slide in
-            transform.position = Vector3.Lerp(new Vector3(-15f, 3f, 0f), new Vector3(0f, 3f, 0f), Mathf.SmoothStep(0.0f, 1.0f, t)); //ease in ease out
+            transform.position = Vector3.Lerp(new Vector3(-15f, 2f, 0f), new Vector3(0f, 2f, 0f), Mathf.SmoothStep(0.0f, 1.0f, t)); //ease in ease out
             yield return null;
         }
         animateCoroutine = null;
@@ -76,7 +76,7 @@ public class CustomerController : MonoBehaviour
 
     private void DriftOut()
     {
-        StartCoroutine("DriftOutCustomer");
+        animateCoroutine = StartCoroutine("DriftOutCustomer");
     }
 
     private IEnumerator DriftOutCustomer()
@@ -85,7 +85,7 @@ public class CustomerController : MonoBehaviour
         while (t <= 1.0)
         {
             t += Time.deltaTime / 2; // length of slide in
-            transform.position = Vector3.Lerp(new Vector3(0f, 3f, 0f), new Vector3(15f, 3f, 0f), Mathf.SmoothStep(0.0f, 1.0f, t));
+            transform.position = Vector3.Lerp(new Vector3(0f, 2f, 0f), new Vector3(15f, 2f, 0f), Mathf.SmoothStep(0.0f, 1.0f, t));
             yield return null;
         }
         animateCoroutine = null;

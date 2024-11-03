@@ -15,11 +15,8 @@ public class Spine : MonoBehaviour
 
     private void AnalyzeSpineUp(string result)
     {
-        if(result == "Good")
-        {
             completed++;
             SpineRefresh();
-        }
     }
 
     public void SpineRefresh()
