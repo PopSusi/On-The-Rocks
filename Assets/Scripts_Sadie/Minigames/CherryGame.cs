@@ -12,6 +12,7 @@ public class CherryGame : MiniGameBase
         interactionCount = Random.Range(5, 10);
         gameCanvas.gameObject.SetActive(true);
         cherryGuy.gameObject.SetActive(true);
+        cherryGuy.GetComponent<SpriteRenderer>().sprite = baseSprite;
         cherryGuy.cherryActive = true;
         
     }
@@ -32,11 +33,15 @@ public class CherryGame : MiniGameBase
             orderManager.Fail();
         }
 
+        
+    }
+
+   private IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(1);
         gameCanvas.gameObject.SetActive(false);
         cherryGuy.gameObject.SetActive(false);
         cherryGuy.cherryActive = false;
     }
-
-   
 
 }

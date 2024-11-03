@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameType: 4
-  baseSprite: {fileID: 0}
-  interactionSprites: []
+  baseSprite: {fileID: 21300000, guid: 9705eb3ae03d9194d8656cfcc5869b7f, type: 3}
+  interactionSprites:
+  - {fileID: 21300000, guid: a7aedc8d8f932984797dbd227a0fce1b, type: 3}
   baseObj: {fileID: 0}
   interactionCount: 0
   orderManager: {fileID: 0}

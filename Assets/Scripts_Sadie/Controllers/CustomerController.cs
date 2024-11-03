@@ -16,6 +16,7 @@ public class CustomerController : MonoBehaviour
     public CustomerBase customerData;
     public List<IngredientBase> ingredients = new List<IngredientBase>();
     public Coroutine animateCoroutine;
+    public Coroutine speakCoroutine;
     private float driftTime;
     private float elapsedTime;
     private AudioSource audioSource;
@@ -65,11 +66,11 @@ public class CustomerController : MonoBehaviour
         while (t <= 1.0)
         {
             t += Time.deltaTime / 2; // length of slide in
-            transform.position = Vector3.Lerp(new Vector3(-15f, 0f, 0f), new Vector3(0, 0, 0), Mathf.SmoothStep(0.0f, 1.0f, t)); //ease in ease out
+            transform.position = Vector3.Lerp(new Vector3(-15f, 3f, 0f), new Vector3(0f, 3f, 0f), Mathf.SmoothStep(0.0f, 1.0f, t)); //ease in ease out
             yield return null;
         }
         animateCoroutine = null;
-        StartCoroutine("SpeakRepeat");
+        speakCoroutine = StartCoroutine("SpeakRepeat");
         yield return null;
     }
 
@@ -84,7 +85,7 @@ public class CustomerController : MonoBehaviour
         while (t <= 1.0)
         {
             t += Time.deltaTime / 2; // length of slide in
-            transform.position = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(15, 0, 0), Mathf.SmoothStep(0.0f, 1.0f, t));
+            transform.position = Vector3.Lerp(new Vector3(0f, 3f, 0f), new Vector3(15f, 3f, 0f), Mathf.SmoothStep(0.0f, 1.0f, t));
             yield return null;
         }
         animateCoroutine = null;
@@ -119,6 +120,12 @@ public class CustomerController : MonoBehaviour
         audioSource.Play();
         Icon(ing.bookSprite);
     }
+
+    public void AttemptCancelSpeech()
+    {
+        if (speakCoroutine != null) StopCoroutine(speakCoroutine);
+    }
+
     ~CustomerController()
     {
         OrderManager.OrderDone -= DriftOut;

@@ -17,9 +17,16 @@ public abstract class MiniGameBase : MonoBehaviour
     private void Start() => Page.Send += LaunchGame;
 
     public Type gameType;
+
     public Sprite baseSprite;
-    public Sprite[] interactionSprites;
+    public Sprite interactionSprites;
+    public Sprite handSprite;
+    public Sprite interactionHands;
+    public bool useHands;
+
     public GameObject baseObj;
+    public GameObject hands;
+
     public int interactionCount;
     [SerializeField] protected OrderManager orderManager;
     [SerializeField] protected Canvas gameCanvas; //game's UI
