@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PageBase : ScriptableObject
 {
-    public Sprite page;
     public string pagetext;
-    public DrinkBase.DrinkName drink;
+    public IngredientBase[] ingredient;
 }

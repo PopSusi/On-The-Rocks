@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3481c0644fea2240a44e888692fe3ac, type: 3}
   m_Name: Page2
   m_EditorClassIdentifier: 
-  page: {fileID: 0}
   pagetext: 
-  drink: 1
+  ingredient:
+  - {fileID: 11400000, guid: 460b14455da527548a5f4e94dea51419, type: 2}
+  - {fileID: 11400000, guid: 95fdbd8adf9240f4f8ae270e0a8cc9b6, type: 2}

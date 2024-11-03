@@ -10,17 +10,15 @@ public class Page : MonoBehaviour
     public static event IngredientSend Send;
 
     public TextMeshProUGUI[] body;
-    public TextMeshProUGUI[] head;
     public Image[] icon;
     public IngredientBase[] ingredients;
 
-    public void SetValues()
+    public void SetValues(PageBase page)
     {
-        //body.text[0] = ingredients[0].bookText; edit Scriptable Object to be string
-        //head[0].text = ingredients[0].type.ToString();
+        ingredients = page.ingredient;
+        body[0].text = ingredients[0].bookText;
         icon[0].sprite = ingredients[0].bookSprite;
-        //body.text[1] = ingredients[1].bookText; edit Scriptable Object to be string
-        //head[1].text = ingredients[1].type.ToString();
+        body[1].text = ingredients[1].bookText; 
         icon[1].sprite = ingredients[1].bookSprite;
     }
     public void SendEvent(int index)

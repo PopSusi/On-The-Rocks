@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CharacterDrinkManager : MonoBehaviour
 {
-     public CustomerBase[] customerBases;
+    private CustomerBase[] customerBases;
     public CustomerBase customerBase;
     [SerializeField] private GameObject customerPrefab;
+    private DrinkBase[] drinkBases;
     public DrinkBase drinkBase;
-    public DrinkBase[] drinkBases;
     [SerializeField] private OrderManager orderManager;
 
     public CustomerController currentCustomer;
@@ -24,10 +25,11 @@ public class CharacterDrinkManager : MonoBehaviour
     /// </summary>
    public void CustomerInitialize()
     {
-        customerBase = customerBases[Random.Range(0, customerBases.Length)];
+        customerBases = Resources.LoadAll<CustomerBase>("Customers");
+        customerBase = customerBases[UnityEngine.Random.Range(0, customerBases.Length)];
         Debug.Log(customerBase);
 
-        currentCustomer = Instantiate(customerPrefab).GetComponent<CustomerController>();
+        currentCustomer = Instantiate(customerPrefab, new Vector3(-15, 0, 0), quaternion.identity).GetComponent<CustomerController>();
         customerPrefab.GetComponent<CustomerController>().customerData = customerBase;
 
         DrinkInitialize();
@@ -38,10 +40,10 @@ public class CharacterDrinkManager : MonoBehaviour
     /// </summary>
     public void DrinkInitialize()
     {
-        drinkBase = drinkBases[Random.Range(0, drinkBases.Length)];
+        drinkBases = Resources.LoadAll<DrinkBase>("Drinks");
+        drinkBase = drinkBases[UnityEngine.Random.Range(0, drinkBases.Length)];
         
         currentCustomer.customerData.drinkBase = drinkBase;
-        orderManager.drinkBase = drinkBase;
         Debug.Log(currentCustomer.customerData.drinkBase);
     }
 
