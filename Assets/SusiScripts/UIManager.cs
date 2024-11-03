@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -31,6 +32,16 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         finalMenu.SetActive(true);
+    }
+
+    public void Reset()
+    {
+        SceneManager.LoadScene("FinalScene");
+        Time.timeScale = 1f;
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
     ~UIManager()
     {
