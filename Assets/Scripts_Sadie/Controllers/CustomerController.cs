@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -7,9 +8,11 @@ using UnityEngine;
 public class CustomerController : MonoBehaviour
 {
     public CustomerBase customerData;
+    public List<IngredientBase> ingredients = new List<IngredientBase>();
     public Coroutine animateCoroutine;
     private float driftTime;
     private float elapsedTime;
+    private AudioSource audioSource;
 
 
     /*WTF is happening in game
@@ -33,9 +36,17 @@ public class CustomerController : MonoBehaviour
     Display mad if anything messes up, else get point in a score manager
     Delete customer, instantiate new customer with new order, repeat yippee me when gameplay loop
     */
-    private void Start()
+    public void Initialize()
     {
+        audioSource = GetComponent<AudioSource>();
         animateCoroutine = StartCoroutine("DriftInCustomer");
+        foreach (var ing in customerData.drinkBase.accIngredients) {
+            ingredients.Add(ing);
+        }
+        foreach (var ing in customerData.drinkBase.liquidIngredients)
+        {
+            ingredients.Add(ing);
+        }
     }
 
     private IEnumerator DriftInCustomer()
@@ -48,6 +59,7 @@ public class CustomerController : MonoBehaviour
             yield return null;
         }
         animateCoroutine = null;
+        StartCoroutine("SpeakRepeat");
         yield return null;
     }
     private IEnumerator DriftOutCustomer()
@@ -61,5 +73,20 @@ public class CustomerController : MonoBehaviour
         }
         animateCoroutine = null;
         yield return null;
+    }
+
+    private IEnumerator SpeakRepeat()
+    {
+        foreach(IngredientBase ing in ingredients)
+        {
+            yield return new WaitForSeconds(1f);
+            Speak(ing);
+        }
+    }
+
+    private void Speak(IngredientBase ing)
+    {
+        audioSource.clip = ing.orderSFX;
+        audioSource.Play();
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: Cherries
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 0}
+  orderSFX: {fileID: 8300000, guid: 9d50e869df3eec04b96f73f202771c03, type: 3}
   bookText: Violence
   bookSprite: {fileID: -2413806693520163455, guid: 1382dae2f7a38dc4db5884220bfcb9df, type: 3}
   type: 1

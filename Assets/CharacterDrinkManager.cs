@@ -45,6 +45,7 @@ public class CharacterDrinkManager : MonoBehaviour
         
         currentCustomer.customerData.drinkBase = drinkBase;
         Debug.Log(currentCustomer.customerData.drinkBase);
+        currentCustomer.Initialize();
     }
 
     //Once round is over, delete current customer and spawn in new one

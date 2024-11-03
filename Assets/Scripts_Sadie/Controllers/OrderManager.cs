@@ -6,8 +6,8 @@ public class OrderManager : MonoBehaviour
 {
     //Player's wins and fails get passed into here
 
-    public List<DrinkBase.Liquids> playerLiquidIng;
-    public List<DrinkBase.Accesories> playerAccIng;
+    public bool[] checks = { false, false, false, false, false, false };
+    int index;
     public DrinkBase drinkBase; //Can now access the arrays for drink for comparison
     [SerializeField] private CharacterDrinkManager characterDrinkManager;
 
@@ -18,7 +18,7 @@ public class OrderManager : MonoBehaviour
     /// When drink is done, checks to see if drink is correct or incorrect
     /// </summary>
     public void CompareDrinks()
-    {
+    {/*
         if (playerLiquidIng.Count == drinkBase.liquidIngredients.Length && playerAccIng.Count == drinkBase.accIngredients.Length)
         {
             //Check if drink has right number of ingredients
@@ -45,13 +45,48 @@ public class OrderManager : MonoBehaviour
             playerLiquidIng.Clear();
             playerAccIng.Clear();
             characterDrinkManager.RespawnCustomer();
+        }*/
+
+        int checkCount = 0;
+        foreach (bool booleanCheck in checks)
+        {
+            if (booleanCheck)
+            {
+                checkCount++;
+            }
         }
+        if (checkCount < 3)
+        {
+            //MAD
+        }
+        else if (checkCount > 3 && checkCount != 6)
+        {
+            //slightlymad
+        }
+        else
+        {
+            //happy
+        }
+
+
     } //END Compare Drinks()
+
+    public void Success()
+    {
+        checks[index] = true;
+        index++;
+    }
+
+    public void Fail()
+    {
+        checks[index] = false;
+        index++;
+    }
 
     /// <summary>
     /// Checks liquid ingredients
     /// </summary>
-    private void CheckLiquid()
+    /*private void CheckLiquid()
     {
         
             for (int i = 0; i < drinkBase.liquidIngredients.Length; i++)
@@ -113,6 +148,6 @@ public class OrderManager : MonoBehaviour
         }
 
     } //END CheckAccesssories()
-
+    */
 
 }

@@ -82,12 +82,14 @@ public class OliveGame : MiniGameBase
         if(scissors.rectTransform.position.x <= demonTail.rectTransform.position.x + tailOffset && scissors.rectTransform.position.x >= demonTail.rectTransform.position.x - tailOffset)
         {
             Debug.Log("Success");
-            orderManager.playerAccIng.Add(DrinkBase.Accesories.OLIVE);
+            //orderManager.playerAccIng.Add(DrinkBase.Accesories.OLIVE);
+            orderManager.Success();
         }
         else
         {
             Debug.Log("Fail");
-            orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
+            //orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
+            orderManager.Fail();
         }
 
 

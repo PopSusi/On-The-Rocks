@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fdb30c01c17344baa2f610fae7d708, type: 3}
   m_Name: Drink2
   m_EditorClassIdentifier: 
-  liquidIngredients: 01000000010000000100000001000000
-  accIngredients: 0200000001000000
+  liquidIngredients:
+  - {fileID: 11400000, guid: c8f9a91a38007f140a14c76bcce06bfd, type: 2}
+  accIngredients:
+  - {fileID: 11400000, guid: 079045eb4ff6e7045a32e5e59602acda, type: 2}
+  - {fileID: 11400000, guid: 460b14455da527548a5f4e94dea51419, type: 2}
   drinkName: 1

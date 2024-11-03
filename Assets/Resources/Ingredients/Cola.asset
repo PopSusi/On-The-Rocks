@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: Cola
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 0}
+  orderSFX: {fileID: 8300000, guid: 2f9df9a8310a0b44db45a78798816bb2, type: 3}
   bookText: Piss
   bookSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   type: 2

@@ -39,12 +39,14 @@ public class ColaGame : MiniGameBase
         if (successfulJerk)
         {
             Debug.Log("Success");
-            orderManager.playerLiquidIng.Add(DrinkBase.Liquids.COLA);
+            //orderManager.playerLiquidIng.Add(DrinkBase.Liquids.COLA);
+            orderManager.Success();
         }
         else
         {
             Debug.Log("Fail");
-            orderManager.playerLiquidIng.Add(DrinkBase.Liquids.FAIL);
+            //orderManager.playerLiquidIng.Add(DrinkBase.Liquids.FAIL);
+            orderManager.Fail();
         }
         activelyJerking = false;
         gameCanvas.gameObject.SetActive(false);

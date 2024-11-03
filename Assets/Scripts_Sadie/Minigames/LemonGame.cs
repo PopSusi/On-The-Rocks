@@ -23,12 +23,14 @@ public class LemonGame : MiniGameBase
         if (lemonGuy.perfectLemon)
         {
             Debug.Log("Success!");
-            orderManager.playerLiquidIng.Add(DrinkBase.Liquids.LEMONJUICE);
+            //orderManager.playerLiquidIng.Add(DrinkBase.Liquids.LEMONJUICE);
+            orderManager.Success();
         }
         else
         {
             Debug.Log("Fail");
-            orderManager.playerLiquidIng.Add(DrinkBase.Liquids.FAIL);
+            //orderManager.playerLiquidIng.Add(DrinkBase.Liquids.FAIL);
+            orderManager.Fail();
         }
 
 

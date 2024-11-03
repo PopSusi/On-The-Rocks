@@ -51,11 +51,13 @@ public class PikminGame : MiniGameBase
     {
         if(numPickminCut == interactionCount)
         {
-            orderManager.playerAccIng.Add(DrinkBase.Accesories.PIKMIN);
+            //orderManager.playerAccIng.Add(DrinkBase.Accesories.PIKMIN);
+            orderManager.Success();
         }
         else
         {
-            orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
+            // orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
+            orderManager.Fail();
         }
 
         holdScissor = false;

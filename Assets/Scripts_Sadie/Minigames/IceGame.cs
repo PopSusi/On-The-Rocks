@@ -27,13 +27,14 @@ public class IceGame : MiniGameBase
         if (perfectIce)
         {
             Debug.Log("Success!");
-            orderManager.playerAccIng.Add(DrinkBase.Accesories.ICE);
-
+            //orderManager.playerAccIng.Add(DrinkBase.Accesories.ICE);
+            orderManager.Success();
         }
         else
         {
             Debug.Log("Fail");
-            orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
+            //orderManager.playerAccIng.Add(DrinkBase.Accesories.FAIL);
+            orderManager.Fail();
         }
 
         gameCanvas.gameObject.SetActive(false);
