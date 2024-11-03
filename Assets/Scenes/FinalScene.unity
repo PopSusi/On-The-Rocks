@@ -1499,6 +1499,7 @@ MonoBehaviour:
   countSqueezes: 0
   countBreaths: 0
   lemonGame: {fileID: 1772008209}
+  lemonSprite: {fileID: 0}
 --- !u!50 &683584430
 Rigidbody2D:
   serializedVersion: 4
@@ -6237,10 +6238,6 @@ PrefabInstance:
       propertyPath: orderManager
       value: 
       objectReference: {fileID: 799993453}
-    - target: {fileID: 8245159436507608307, guid: 8ec2aa1cf80e5b74980a4763718d402a, type: 3}
-      propertyPath: interactionSprites
-      value: 
-      objectReference: {fileID: 21300000, guid: a7aedc8d8f932984797dbd227a0fce1b, type: 3}
     - target: {fileID: 8277722072593904615, guid: 8ec2aa1cf80e5b74980a4763718d402a, type: 3}
       propertyPath: m_Name
       value: OliveGame
