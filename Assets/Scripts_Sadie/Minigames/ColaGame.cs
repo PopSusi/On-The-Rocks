@@ -130,9 +130,26 @@ public class ColaGame : MiniGameBase
         yield return new WaitForSeconds(0.5f);
         if (activelyJerking)
         {
-
+            SwitchSprite();
             mouseTemp = mousePosition;
             StartCoroutine(WaitForTempJerk());
+        }
+    }
+
+
+    private void SwitchSprite()
+    {
+        if (mousePosition.y != mouseTemp.y && hit.collider != null) //If mouse moved and is over the cola bottle
+        {
+            colaBottle.GetComponent<SpriteRenderer>().sprite = interactionSprites;
+            return;
+        }
+        else if (mousePosition.y == mouseTemp.y || hit.collider == null) //if mouse is in the same position or is not over the bottle
+        {
+
+            colaBottle.GetComponent<SpriteRenderer>().sprite = baseSprite;
+
+
         }
     }
 }

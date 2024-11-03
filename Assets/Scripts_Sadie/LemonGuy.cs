@@ -16,13 +16,15 @@ public class LemonGuy : MonoBehaviour
     public int countBreaths;
 
     [SerializeField] private LemonGame lemonGame;
+    [SerializeField] private SpriteRenderer lemonSprite;
 
 
 
     public void OnMouseDown()
     {
+        lemonSprite.sprite = lemonGame.interactionSprites;
         if (activeLemon)
-        {
+        {   
             StopAllCoroutines();
             if (countBreaths > 0)
             {
@@ -39,6 +41,7 @@ public class LemonGuy : MonoBehaviour
 
     public void OnMouseUp()
     {
+        lemonSprite.sprite = lemonGame.baseSprite;
         if (activeLemon)
         {
             StopAllCoroutines();

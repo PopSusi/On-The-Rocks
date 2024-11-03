@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IceGame : MiniGameBase
 {
@@ -10,6 +11,14 @@ public class IceGame : MiniGameBase
     public float iceTarget;
     public float iceCount;
     public bool activeIce;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(waiter());
+        }
+    }
 
     public override void Interaction()
     {
@@ -49,11 +58,14 @@ public class IceGame : MiniGameBase
 
     public void OnMouseDown()
     {
+        Image _button = gameCanvas.GetComponentInChildren<Image>();
+        _button.sprite = interactionSprites;
         
         if (activeIce)
         {
             interactionCount++;
             Debug.Log(interactionCount);
+            StartCoroutine(ChangeSprite());
             checkIce();
         }
         
@@ -71,12 +83,25 @@ public class IceGame : MiniGameBase
     }
     IEnumerator waiter()
     {
+       ;
         yield return new WaitForSeconds(3);
         if (interactionCount != iceTarget)
         {
             perfectIce = false;
         }
+        else
+        {
+            perfectIce = true;
+        }
         ConfirmCheck();
     }
 
+
+    IEnumerator ChangeSprite()
+    {
+        yield return new WaitForSeconds(1);
+        Image _button = gameCanvas.GetComponentInChildren<Image>();
+        _button.sprite = baseSprite;
     }
+
+}

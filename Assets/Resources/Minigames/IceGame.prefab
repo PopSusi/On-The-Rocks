@@ -46,9 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameType: 0
   baseSprite: {fileID: 21300000, guid: ed7ae05c462915245906747b7df28bb6, type: 3}
-  interactionSprites:
-  - {fileID: 21300000, guid: 68bf9dfeecc9f2e48b9ead1fd15f895f, type: 3}
+  interactionSprites: {fileID: 21300000, guid: 68bf9dfeecc9f2e48b9ead1fd15f895f, type: 3}
+  handSprite: {fileID: 0}
+  interactionHands: {fileID: 0}
+  useHands: 0
   baseObj: {fileID: 0}
+  hands: {fileID: 0}
   interactionCount: 0
   orderManager: {fileID: 0}
   gameCanvas: {fileID: 0}

@@ -83,6 +83,7 @@ public class PikminGame : MiniGameBase
     public void GrabScissor()
     {
         holdScissor = true;
+        scissor.gameObject.GetComponent<Image>().sprite = interactionSprites;
     } //END GrabScissor() 
 
     /// <summary>
@@ -99,8 +100,16 @@ public class PikminGame : MiniGameBase
         if(holdScissor)
         {
             Debug.Log("Cut pikmin");
+            scissor.gameObject.GetComponent<Image>().sprite = baseSprite;
+            StartCoroutine(ChangeToInteract());
             numPickminCut++;
         }
+    }
+
+    IEnumerator ChangeToInteract()
+    {
+        yield return new WaitForSeconds(0.5f);
+        scissor.gameObject.GetComponent<Image>().sprite = interactionSprites;
     }
 
 }
