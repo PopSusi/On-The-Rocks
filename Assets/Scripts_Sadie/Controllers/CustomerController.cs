@@ -48,7 +48,7 @@ public class CustomerController : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         sprite.sprite = customerData.characterSprite;
-        OrderManager.OrderDone += DriftOut;
+
         audioSource = GetComponent<AudioSource>();
         animateCoroutine = StartCoroutine("DriftInCustomer");
         foreach (var ing in customerData.drinkBase.accIngredients) {
@@ -74,7 +74,7 @@ public class CustomerController : MonoBehaviour
         yield return null;
     }
 
-    private void DriftOut()
+    public void DriftOut()
     {
         animateCoroutine = StartCoroutine("DriftOutCustomer");
     }
@@ -90,7 +90,7 @@ public class CustomerController : MonoBehaviour
         }
         animateCoroutine = null;
         LeftScreen();
-        Destroy(gameObject);
+        //Destroy(gameObject);
         yield return null;
     }
 
@@ -123,11 +123,14 @@ public class CustomerController : MonoBehaviour
 
     public void AttemptCancelSpeech()
     {
-        if (speakCoroutine != null) StopCoroutine(speakCoroutine);
+        StopCoroutine(speakCoroutine);
     }
 
     ~CustomerController()
     {
         OrderManager.OrderDone -= DriftOut;
+        StopAllCoroutines();
+        animateCoroutine = null;
+        speakCoroutine = null;
     }
 }
