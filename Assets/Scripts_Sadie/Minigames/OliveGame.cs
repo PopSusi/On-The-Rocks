@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class OliveGame : MiniGameBase
 {
+
+
+
     public override void Interaction()
     {
-        orderManager.playerAccIng.Add(DrinkBase.Accesories.OLIVE);
+        //orderManager.playerAccIng.Add(DrinkBase.Accesories.OLIVE);
     }
 }
