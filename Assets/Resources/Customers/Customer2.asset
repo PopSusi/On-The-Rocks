@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77c78b31750f6f4d95a40b8a498a841, type: 3}
   m_Name: Customer2
   m_EditorClassIdentifier: 
-  drinkBase: {fileID: 0}
-  characterSprite: {fileID: 0}
+  drinkBase: {fileID: 11400000, guid: 60ee81d664286dc48ae3c0d120ca2952, type: 2}
+  characterSprite: {fileID: 21300000, guid: 3a5b725f3d2ad5844b5f4293adf0a81e, type: 3}
   characterAngrySprite: {fileID: 0}
+  pitch: 1

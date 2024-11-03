@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: Ice
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 8300000, guid: a4a34456608036e4f9adf3b538eb6f18, type: 3}
+  orderLowSFX: {fileID: 8300000, guid: 84aa2444456465c43981c4340ec3c1ce, type: 3}
+  orderMedSFX: {fileID: 8300000, guid: 1a83ab2e93f5a6e48b8f1e19b7e20e53, type: 3}
+  orderHighSFX: {fileID: 8300000, guid: 46527f00d45a8ce4e8b414cb9ca28c6a, type: 3}
   bookText: Crack your knuckles and "relax"
-  bookSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  bookSprite: {fileID: 21300000, guid: cbd68b2a1fad5154f903bd31e7ab8dda, type: 3}
   type: 0

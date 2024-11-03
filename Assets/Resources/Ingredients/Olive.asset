@@ -16,5 +16,5 @@ MonoBehaviour:
   orderMedSFX: {fileID: 8300000, guid: 9e4000a1bb270e84aac618dfed8138d7, type: 3}
   orderHighSFX: {fileID: 8300000, guid: ca9609017ae4a81448cba7bb4d237947, type: 3}
   bookText: Demon's Tail
-  bookSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  bookSprite: {fileID: 21300000, guid: b2dd2545d320d4241878fd8c5a92d7cf, type: 3}
   type: 4

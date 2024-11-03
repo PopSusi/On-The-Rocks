@@ -16,5 +16,5 @@ MonoBehaviour:
   orderMedSFX: {fileID: 8300000, guid: 158cbea3bbc87b2439ce2b3a14793f3b, type: 3}
   orderHighSFX: {fileID: 8300000, guid: 2409fe287ad03f84cb7c95b18ef0eacb, type: 3}
   bookText: Bu du du do do doo
-  bookSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  bookSprite: {fileID: 21300000, guid: f0a7464aeac552842a3833c59cc94728, type: 3}
   type: 5

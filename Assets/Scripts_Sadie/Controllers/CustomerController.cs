@@ -20,6 +20,8 @@ public class CustomerController : MonoBehaviour
     private float elapsedTime;
     private AudioSource audioSource;
 
+    private SpriteRenderer sprite;
+
 
     /*WTF is happening in game
     Player starts game (UI)
@@ -28,13 +30,12 @@ public class CustomerController : MonoBehaviour
     Depending on Drink SO passed to some order manager ig, new Ui is loaded 
     Drink So spawn holds list of ingredients (DONE)
     Each ingredient is listed in array of ingredients by enum type (DONE)
-    Based on the enum, associated w an ingtredient
-    Book is loaded in w/ info on apages
-    Player clicks through pages to find the drink recipe
-    Ingredients on side or somewhere, doesn't matter what page s up question mark?
+    Based on the enum, associated w an ingtredient (DONE)
+    Book is loaded in w/ info on apages (DONE)
+    Player clicks through pages to find the drink recipe (DONE)
+    Ingredients on side or somewhere, doesn't matter what page s up question mark? (DONE)
     When click on ingredients, launches minigame by passing ingredient enum into a fmanager, interaction called on minigame by this
     Making me wonder if we need the ingredient class or just use minigames?
-    Minigame must return an enum type and apply it to an array/List(s) that can then be compared?
     That should all be passed through a manager, order manager?
     On game end, checks if fail or pass
     If fail, put fail into the list, if pass, pass enum for ingredient from drink base
@@ -44,6 +45,8 @@ public class CustomerController : MonoBehaviour
     */
     public void Initialize()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        sprite.sprite = customerData.characterSprite;
         OrderManager.OrderDone += DriftOut;
         audioSource = GetComponent<AudioSource>();
         animateCoroutine = StartCoroutine("DriftInCustomer");
@@ -86,6 +89,7 @@ public class CustomerController : MonoBehaviour
         }
         animateCoroutine = null;
         LeftScreen();
+        Destroy(gameObject);
         yield return null;
     }
 

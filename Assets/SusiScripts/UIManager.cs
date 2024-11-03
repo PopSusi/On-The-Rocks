@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         BookScript.close += CloseBook;
+        Page.Closed += CloseBook;
     }
 
     public void OpenBook()
@@ -27,5 +28,6 @@ public class UIManager : MonoBehaviour
     ~UIManager()
     {
         BookScript.close -= CloseBook;
+        Page.Closed -= CloseBook;
     }
 }

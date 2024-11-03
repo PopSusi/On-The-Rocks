@@ -49,3 +49,9 @@ MonoBehaviour:
   interactionSprites: []
   baseObj: {fileID: 0}
   interactionCount: 0
+  orderManager: {fileID: 0}
+  gameCanvas: {fileID: 0}
+  perfectIce: 0
+  iceTarget: 0
+  iceCount: 0
+  activeIce: 0

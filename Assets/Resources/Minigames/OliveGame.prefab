@@ -49,3 +49,12 @@ MonoBehaviour:
   interactionSprites: []
   baseObj: {fileID: 0}
   interactionCount: 0
+  orderManager: {fileID: 0}
+  gameCanvas: {fileID: 0}
+  oliveActive: 0
+  scissors: {fileID: 0}
+  demonTail: {fileID: 0}
+  speed: 1000
+  maxX: 1200
+  minX: 100
+  tailOffset: 75

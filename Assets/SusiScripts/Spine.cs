@@ -25,8 +25,8 @@ public class Spine : MonoBehaviour
     public void SpineRefresh()
     {
         //baseheight * 6 - completed / 6 (6 stages total)
-        float divider = (6f - completed) / 6f;
-        float tempHeight = 200 * divider;
+        float divider = (5f - completed) / 5f;
+        float tempHeight = 167 * divider;
         blackFill.rectTransform.sizeDelta = new Vector2(100, tempHeight);
         Debug.Log(divider);
     }

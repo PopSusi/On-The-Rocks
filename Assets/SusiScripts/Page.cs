@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class Page : MonoBehaviour
 {
-    public delegate void IngredientSend(MiniGameBase.Type minigame);
+    public delegate void IngredientSend(string minigame);
     public static event IngredientSend Send;
+    public delegate void PageAlert();
+    public static event PageAlert Closed;
 
     public TextMeshProUGUI[] body;
     public Image[] icon;
@@ -23,6 +25,9 @@ public class Page : MonoBehaviour
     }
     public void SendEvent(int index)
     {
-        Send(ingredients[index].type);
+        Debug.Log(ingredients.Length + " is length. " + index + " is the accessor.");
+        string gameToSend = ingredients[index].type.ToString();
+        Send(gameToSend);
+        Closed();
     }
 }

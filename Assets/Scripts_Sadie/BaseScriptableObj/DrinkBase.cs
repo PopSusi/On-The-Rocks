@@ -17,5 +17,5 @@ public class DrinkBase : ScriptableObject
     public IngredientBase[] liquidIngredients;
     public IngredientBase[] accIngredients;
     public DrinkName drinkName;
-
+    public Sprite finalImage;
 }

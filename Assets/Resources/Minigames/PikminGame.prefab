@@ -49,3 +49,14 @@ MonoBehaviour:
   interactionSprites: []
   baseObj: {fileID: 0}
   interactionCount: 0
+  orderManager: {fileID: 0}
+  gameCanvas: {fileID: 0}
+  pikminActive: 0
+  pikminPrefab: {fileID: 8680621456362893642, guid: 445fcc4b4fab994439a1a0755d0712ea, type: 3}
+  scissor: {fileID: 0}
+  maxPikmin: 10
+  holdScissor: 0
+  maxX: 1000
+  maxY: 600
+  minX: 100
+  minY: 100
