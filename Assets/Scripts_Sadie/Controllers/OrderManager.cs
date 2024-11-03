@@ -7,8 +7,7 @@ public class OrderManager : MonoBehaviour
 {
     //Player's wins and fails get passed into here
 
-    public bool[] checks = { false, false, false, false, false, false };
-    int index;
+    public List<bool> checks = new List<bool>();
     public DrinkBase drinkBase; //Can now access the arrays for drink for comparison
     [SerializeField] private CharacterDrinkManager characterDrinkManager;
 
@@ -68,24 +67,31 @@ public class OrderManager : MonoBehaviour
                 checkCount++;
             }
         }
-        if (checkCount < 3)
+        if (checkCount < 2)
         {
             Speak("Mad");
             OrderResultSend("Mad");
+            Debug.Log("Mad");
         }
-        else if (checkCount > 3 && checkCount != 6)
-        {
-            Speak("Meh");
-            OrderResultSend("Meh");
-        }
-        else
+        else if (checkCount == checks.Count)
         {
             Speak("Good");
             OrderResultSend("Good");
+            Debug.Log("Good");
         }
-
-
+        else
+        {
+            Speak("Meh");
+            OrderResultSend("Meh");
+            Debug.Log("Meh");
+        }
+            ResetMetrics();
     } //END Compare Drinks()
+
+    private void ResetMetrics()
+    {
+        checks.Clear();
+    }
 
     private void Speak(string response)
     {
@@ -123,14 +129,12 @@ public class OrderManager : MonoBehaviour
 
     public void Success()
     {
-        checks[index] = true;
-        index++;
+        checks.Add(true);
     }
 
     public void Fail()
     {
-        checks[index] = false;
-        index++;
+        checks.Add(false);
     }
 
     /// <summary>
