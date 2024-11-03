@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: LemonJuice
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 8300000, guid: 9d50e869df3eec04b96f73f202771c03, type: 3}
-  bookText: Squeeze his ass
-  bookSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  orderLowSFX: {fileID: 8300000, guid: 295aaf3fdab5f994ba8b7f98074d8ccd, type: 3}
+  orderMedSFX: {fileID: 8300000, guid: 793bc9d73b3dc8148a3c6cdf66f3f72f, type: 3}
+  orderHighSFX: {fileID: 8300000, guid: 30e4d1140dfe7a849815fd5714e6f745, type: 3}
+  bookText: Piss
+  bookSprite: {fileID: 21300000, guid: e9445db6078569d40b465bb44c77932c, type: 3}
   type: 3

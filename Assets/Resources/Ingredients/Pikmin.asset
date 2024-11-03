@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: Pikmin
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 8300000, guid: a4a34456608036e4f9adf3b538eb6f18, type: 3}
+  orderLowSFX: {fileID: 8300000, guid: 66b443bfc5d3b4145bda60a45d42230a, type: 3}
+  orderMedSFX: {fileID: 8300000, guid: 158cbea3bbc87b2439ce2b3a14793f3b, type: 3}
+  orderHighSFX: {fileID: 8300000, guid: 2409fe287ad03f84cb7c95b18ef0eacb, type: 3}
   bookText: Bu du du do do doo
   bookSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   type: 5

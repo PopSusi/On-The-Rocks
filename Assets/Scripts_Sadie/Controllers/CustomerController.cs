@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class CustomerController : MonoBehaviour
 {
+    public delegate void SendIcon(Sprite sprite);
+    public static event SendIcon Icon;
+    public delegate void CustomerAlerts();
+    public static event CustomerAlerts LeftScreen;
+
+
     public CustomerBase customerData;
     public List<IngredientBase> ingredients = new List<IngredientBase>();
     public Coroutine animateCoroutine;
@@ -38,6 +44,7 @@ public class CustomerController : MonoBehaviour
     */
     public void Initialize()
     {
+        OrderManager.OrderDone += DriftOut;
         audioSource = GetComponent<AudioSource>();
         animateCoroutine = StartCoroutine("DriftInCustomer");
         foreach (var ing in customerData.drinkBase.accIngredients) {
@@ -62,6 +69,12 @@ public class CustomerController : MonoBehaviour
         StartCoroutine("SpeakRepeat");
         yield return null;
     }
+
+    private void DriftOut()
+    {
+        StartCoroutine("DriftOutCustomer");
+    }
+
     private IEnumerator DriftOutCustomer()
     {
         float t = 0.0f;
@@ -72,6 +85,7 @@ public class CustomerController : MonoBehaviour
             yield return null;
         }
         animateCoroutine = null;
+        LeftScreen();
         yield return null;
     }
 
@@ -86,7 +100,23 @@ public class CustomerController : MonoBehaviour
 
     private void Speak(IngredientBase ing)
     {
-        audioSource.clip = ing.orderSFX;
+        switch (customerData.pitch) {
+            case VoicePitch.Low:
+                audioSource.clip = ing.orderLowSFX;
+                break;
+            case VoicePitch.Med:
+            default:
+                audioSource.clip = ing.orderMedSFX;
+                break;
+            case VoicePitch.High:
+                audioSource.clip = ing.orderHighSFX;
+                break;
+        }
         audioSource.Play();
+        Icon(ing.bookSprite);
+    }
+    ~CustomerController()
+    {
+        OrderManager.OrderDone -= DriftOut;
     }
 }

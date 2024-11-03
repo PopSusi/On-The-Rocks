@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: Olive
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 8300000, guid: 2f9df9a8310a0b44db45a78798816bb2, type: 3}
+  orderLowSFX: {fileID: 8300000, guid: 397876cbf1c9c9d4281dcc73abd00cb1, type: 3}
+  orderMedSFX: {fileID: 8300000, guid: 9e4000a1bb270e84aac618dfed8138d7, type: 3}
+  orderHighSFX: {fileID: 8300000, guid: ca9609017ae4a81448cba7bb4d237947, type: 3}
   bookText: Demon's Tail
   bookSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   type: 4

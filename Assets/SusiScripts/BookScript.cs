@@ -31,7 +31,7 @@ public class BookScript : MonoBehaviour
     }
     public void RightTurn()
     {
-        if (pageLeft + 1 < pages.Length)//pages.Length)
+        if (pageLeft + 2 < pages.Length)//pages.Length)
         {
             //Vector3 temp = rightPage.transform.position; //save left
             //rightPage.transform.position = leftPage.transform.position; //move left to right

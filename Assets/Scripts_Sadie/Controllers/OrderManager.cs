@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class OrderManager : MonoBehaviour
 {
     //Player's wins and fails get passed into here
@@ -13,6 +14,18 @@ public class OrderManager : MonoBehaviour
 
     public bool liquidCorrect = false;
     public bool accesoriesCorrect = false;
+
+    private AudioSource audioSource;
+
+    public delegate void OrderAlerts();
+    public static event OrderAlerts OrderDone;
+    public delegate void OrderResult(string result);
+    public static event OrderResult OrderResultSend;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     /// <summary>
     /// When drink is done, checks to see if drink is correct or incorrect
@@ -57,19 +70,56 @@ public class OrderManager : MonoBehaviour
         }
         if (checkCount < 3)
         {
-            //MAD
+            Speak("Mad");
+            OrderResultSend("Mad");
         }
         else if (checkCount > 3 && checkCount != 6)
         {
-            //slightlymad
+            Speak("Meh");
+            OrderResultSend("Meh");
         }
         else
         {
-            //happy
+            Speak("Good");
+            OrderResultSend("Good");
         }
 
 
     } //END Compare Drinks()
+
+    private void Speak(string response)
+    {
+        switch (response)
+        {
+            case "Mad":
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.High)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Angry/ANGY-HIGH");
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.Med)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Angry/ANGY-MID");
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.Low)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Angry/ANGY-LOW");
+                break;
+            case "Meh":
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.High)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Bad/MEH-HIGH");
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.Med)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Bad/MEH-MID");
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.Low)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Bad/MEH-LOW");
+                break;
+            case "Good":
+            default:
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.High)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Good/LESSGO-HIGH");
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.Med)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Good/LESSGO-MID");
+                if (characterDrinkManager.customerBase.pitch == VoicePitch.Low)
+                    audioSource.clip = Resources.Load<AudioClip>("Sounds/Good/LESSGO-LOW");
+                break;
+        }
+        audioSource.Play();
+        OrderDone();
+    }
 
     public void Success()
     {

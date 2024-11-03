@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041afc6f167c6d945ad85ffab6808b9d, type: 3}
   m_Name: Cola
   m_EditorClassIdentifier: 
-  orderSFX: {fileID: 8300000, guid: 2f9df9a8310a0b44db45a78798816bb2, type: 3}
-  bookText: Piss
-  bookSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  orderLowSFX: {fileID: 8300000, guid: 7c1f2feaad3fcbc49b1d51402a7161e1, type: 3}
+  orderMedSFX: {fileID: 8300000, guid: f084ebf2446a7d74bb94f613d5bfd058, type: 3}
+  orderHighSFX: {fileID: 8300000, guid: d804187dea61bcb4aa329848222f2c82, type: 3}
+  bookText: Squeeze his ass
+  bookSprite: {fileID: 21300000, guid: f4eea3ffccf544a439dee8f339d103ec, type: 3}
   type: 2

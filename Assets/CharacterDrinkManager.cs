@@ -17,6 +17,7 @@ public class CharacterDrinkManager : MonoBehaviour
     {
         //Test on start
         CustomerInitialize();
+        CustomerController.LeftScreen += CustomerInitialize;
     }
 
 
@@ -53,5 +54,9 @@ public class CharacterDrinkManager : MonoBehaviour
     {
         Destroy(currentCustomer.gameObject);
         CustomerInitialize();
+    }
+    ~CharacterDrinkManager()
+    {
+        CustomerController.LeftScreen -= CustomerInitialize;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Page : MonoBehaviour
 {
-    public delegate void IngredientSend(IngredientBase ingredient);
+    public delegate void IngredientSend(MiniGameBase.Type minigame);
     public static event IngredientSend Send;
 
     public TextMeshProUGUI[] body;
@@ -23,6 +23,6 @@ public class Page : MonoBehaviour
     }
     public void SendEvent(int index)
     {
-        Send(ingredients[index]);
+        Send(ingredients[index].type);
     }
 }
