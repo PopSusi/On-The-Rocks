@@ -4,93 +4,42 @@ using UnityEngine;
 
 public class LemonGame : MiniGameBase
 {
-    int elapsed;
-    int temp;
-    int count;
-    bool isSqueezed;
-    bool perfectLemon;
-    bool activeLemon;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Interaction();
-    }
+    [SerializeField] private LemonGuy lemonGuy;
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+  
     public override void Interaction() 
     {
-        activeLemon = true;
+        lemonGuy.gameObject.SetActive(true);
+        lemonGuy.activeLemon = true;
+        gameCanvas.gameObject.SetActive(true);
+        lemonGuy.countBreaths = 0;
+        lemonGuy.countSqueezes = 0;
+        lemonGuy.count = 0;
     }
     public override void ConfirmCheck() 
     {
-
-        activeLemon = false;
-        if (perfectLemon)
+        //StartCoroutine(lemonGuy.WaitToEndTimer());
+        lemonGuy.activeLemon = false;
+        if (lemonGuy.perfectLemon)
         {
             Debug.Log("Success!");
+            orderManager.playerLiquidIng.Add(DrinkBase.Liquids.LEMONJUICE);
         }
         else
         {
             Debug.Log("Fail");
+            orderManager.playerLiquidIng.Add(DrinkBase.Liquids.FAIL);
         }
-    }
 
-    public void OnMouseDown()
-    {
-        StopAllCoroutines();
-        BreatheLemon();
-        elapsed = 0;
-        StartCoroutine(TimerStart());
-    }
 
-    public void OnMouseUp()
-    {
-        StopAllCoroutines();
-        SqueezeLemon();
-        elapsed = 0;
-        StartCoroutine(TimerStart());
-    }
-
-    private IEnumerator TimerStart()
-    {
-        Debug.Log("time:" + elapsed);
-        yield return new WaitForSeconds(1);
-        elapsed++;
-
-        StartCoroutine(TimerStart());
+        
+        //lemonGuy.countBreaths = 0;
+        lemonGuy.countSqueezes = 0;
+        lemonGuy.count = 0;
+        gameCanvas.gameObject.SetActive(false);
+        lemonGuy.gameObject.SetActive(false);
+        
     }
 
     
-
-    public void SqueezeLemon()
-    {
-        if (2 <= elapsed && elapsed <= 4)
-        {
-            perfectLemon = true;
-            count++;
-        }
-        else
-        {
-            perfectLemon = false ;
-            ConfirmCheck();
-        }
-    }
-
-    public void BreatheLemon()
-    {
-        if(4 <= elapsed && elapsed <= 8)
-        {
-            perfectLemon = true;
-        }
-        else
-        {
-            perfectLemon = false;
-            ConfirmCheck();
-        }
-    }
 }

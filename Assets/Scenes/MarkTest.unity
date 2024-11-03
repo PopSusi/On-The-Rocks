@@ -172,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &137590980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,13 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f257691cb77a04c4e8eaeaff87dd07e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 0
+  gameType: 3
   baseSprite: {fileID: 0}
   interactionSprites: []
   baseObj: {fileID: 137590979}
-  interactionCount: 0
+  interactionCount: 3
   orderManager: {fileID: 0}
   gameCanvas: {fileID: 0}
+  countSqueezes: 0
+  countBreaths: 0
 --- !u!50 &137590981
 Rigidbody2D:
   serializedVersion: 4
@@ -907,7 +909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1861948077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +935,7 @@ MonoBehaviour:
   successfulJerk: 0
   failedJerks: 0
   jerkTimer: 0
+  colaBottle: {fileID: 0}
 --- !u!70 &1861948078
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
