@@ -9,7 +9,7 @@ public class CherryGame : MiniGameBase
 
     public override void Interaction() 
     {
-        interactionCount = Random.Range(5, 10);
+        interactionCount = 7;
         gameCanvas.gameObject.SetActive(true);
         cherryGuy.gameObject.SetActive(true);
         cherryGuy.GetComponent<SpriteRenderer>().sprite = baseSprite;

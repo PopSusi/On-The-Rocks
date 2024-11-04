@@ -48,7 +48,7 @@ public class IceGame : MiniGameBase
     public void StartIce()
     {
         activeIce = true;
-        iceTarget = Random.Range(10, 31);
+        iceTarget = 10;
         Debug.Log("ice target = " + iceTarget);
         iceCount = 0;
         interactionCount = 0;

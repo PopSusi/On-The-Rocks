@@ -112,7 +112,7 @@ public class ColaGame : MiniGameBase
         Debug.Log("Wait to jerk starts");
 
         yield return new WaitForSeconds(2);
-        jerkTimer = Random.Range(5, 11);
+        jerkTimer = 5;
         StartCoroutine(Jerker());
         if (activelyJerking)
         {

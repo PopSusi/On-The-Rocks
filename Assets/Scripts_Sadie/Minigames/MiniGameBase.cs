@@ -4,6 +4,15 @@ using UnityEngine;
 
 public abstract class MiniGameBase : MonoBehaviour
 {
+
+    //Interaction num/times
+    //Ice: 10
+    //Cola:5
+    //Lemon: 2-4, 4-8
+    // Cherry:7
+
+
+
     public enum Type
     {
         ICE,
